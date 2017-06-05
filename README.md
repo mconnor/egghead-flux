@@ -1,3 +1,5 @@
+Working through [Egghead's Flux tutorial](https://github.com/joemaddalone/egghead-flux-architecture/blob/05-components/package.json)
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
