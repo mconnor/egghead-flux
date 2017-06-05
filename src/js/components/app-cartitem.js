@@ -1,18 +1,30 @@
 import React from 'react';
-import AppActions from "../actions/app-actions";
 import CartButton from './app-cart-button';
+import AppActions from '../actions/app-actions';
 
+//export as stateless Component
 export default (props) => {
 	return (
-		<div className="col-xs-6 col-sm-4 col-md-3"></div>
-		<h4>{ props.item.title }</h4>
-		<img src="http://placeholdit.250x250" width="100%" className="img-responsive"/>
-		<p>{ prop.item.summary }</p>
-		<p>{ props.item.cost }</p>
-		<CartButton
-			handler = { AppActions.addItem.bind(null, props.item) }
-			txt="Add To Cart"
-		/>
-	</div>
+		<tr>
+			<td>
+				<CartButton
+					txt = "x"
+					handler = {AppActions.removeItem.bind(null, props.item)} />
+			</td>
+			<td>{props.item.title}</td>
+			<td>{props.item.qty}</td>
+			<td>
+				<div className="btn-group">
+					<CartButton
+						txt="-"
+						handler={AppActions.decreaseItem.bind(null, props.item)} />
+					<CartButton
+							txt="+"
+							handler={AppActions.increaseItem.bind(null, props.item)} />
+
+				</div>
+			</td>
+			<td>${props.subtotal}</td>
+		</tr>
 	)
 }
