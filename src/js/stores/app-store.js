@@ -24,7 +24,7 @@ const _removeItem = (item) => {
 };
 
 const _findCartItem = (item) => {
-  _return _cartItems.find(_cartItems => cartItem.id === id);
+  return _cartItems.find( cartItem => cartItem.id === item.id);
 };
 
 const _increaseItem = (item) => item.qty++;
@@ -55,7 +55,7 @@ const _cartTotals = (qty = 0, total = 0) => {
   return {qty, total};
 };
 
-const AppStore = Object.assign(EventEmmitter.prototype, {
+const AppStore = Object.assign(EventEmitter.prototype, {
   emitChange() {
     this.emit(CHANGE_EVENT)
   },
@@ -75,7 +75,7 @@ const AppStore = Object.assign(EventEmmitter.prototype, {
   },
 	getCartTotals() {
 		return _cartTotals;
-	}
+	},
   dispatcherIndex: register(function(action) {
     switch (action.actionType) {
       case AppConstants.ADD_ITEM:
@@ -92,7 +92,9 @@ const AppStore = Object.assign(EventEmmitter.prototype, {
 			     break;
     }
 		AppStore.emitChange();
-  });
-	export default AppStore;
+  })
+
 
 }); //make new obj by extending an obj w/ new props
+
+export default AppStore;
