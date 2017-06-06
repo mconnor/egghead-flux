@@ -24,7 +24,7 @@ const _removeItem = (item) => {
 };
 
 const _findCartItem = (item) => {
-  return _cartItems.find( cartItem => cartItem.id === item.id);
+  return _cartItems.find(cartItem => cartItem.id === item.id);
 };
 
 const _increaseItem = (item) => item.qty++;
@@ -73,27 +73,26 @@ const AppStore = Object.assign(EventEmitter.prototype, {
       return Object.assign({}, item, _cartItems.find(cItem => cItem.id === item.id));
     })
   },
-	getCartTotals() {
-		return _cartTotals;
-	},
+  getCartTotals() {
+    return _cartTotals;
+  },
   dispatcherIndex: register(function(action) {
     switch (action.actionType) {
       case AppConstants.ADD_ITEM:
         _addItem(action.item);
         break;
-			case AppConstants.REMOVE_ITEM:
-	        _removeItem(action.item);
-	        break;
-			case AppConstants.INCREASE_ITEM:
-		        _increaseItem(action.item);
-		        break;
-			case AppConstants.DECREASE_ITEM:
-			       _decreaseItem(action.item);
-			     break;
+      case AppConstants.REMOVE_ITEM:
+        _removeItem(action.item);
+        break;
+      case AppConstants.INCREASE_ITEM:
+        _increaseItem(action.item);
+        break;
+      case AppConstants.DECREASE_ITEM:
+        _decreaseItem(action.item);
+        break;
     }
-		AppStore.emitChange();
+    AppStore.emitChange();
   })
-
 
 }); //make new obj by extending an obj w/ new props
 

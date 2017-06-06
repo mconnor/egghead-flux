@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AppActions from '../actions/app-actions';
-import Catelog from './app-catalog';
-import Cart from './app-cart';
+import Catelog from './catalog/app-catalog';
+import Cart from './cart/app-cart';
 
 class App extends Component {
   render() {

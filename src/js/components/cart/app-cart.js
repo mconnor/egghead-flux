@@ -1,29 +1,15 @@
 import React from 'react';
-import AppStore from '../stores/app-store';
-import AppCartItem from "./app-cartitem";
+import AppStore from '../../stores/app-store';
+import AppCartItem from './app-cart-item';
+import StoreWatchMixin from '../../mixins/StoreWatchMixin';
 
 const cartItems = () => {
 	return { items: AppStore.getCart() }
 }
 
-class Cart extends React.Component {
-	constructor() {
-		super();
-		this.state = cartItems();
-		this._onChange = this._onChange.bind(this);
-	}
-	componentWillMount(){
-		AppStore.addChangeListener( this._onChange);
-	}
-	componentWillUnMount(){
-		AppStore.removeChangeListener( this._onChange );
-	}
-	_onChange(){
-		this.setState( cartItems)
-	}
-	render() {
-		var total =0;
-		var items = this.state.items.map( ( item, i ) => {
+const Cart = (props) => {
+		var total = 0;
+		var items = props.items.map( ( item, i ) => {
 			let subtotal = item.cost * item.qty;
 			total += subtotal;
 			return (
@@ -55,7 +41,6 @@ class Cart extends React.Component {
 				</tfoot>
 			</table>
 		</div>
-	)
-	}
+	);
 }
-export default Cart;
+export default StoreWatchMixin( Cart, cartItems)
