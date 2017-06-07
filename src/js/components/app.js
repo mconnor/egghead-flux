@@ -5,8 +5,6 @@ import Template from './app-template';
 
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/css/bootstrap-theme.css';
 
 const App = () => (
   <Router>
