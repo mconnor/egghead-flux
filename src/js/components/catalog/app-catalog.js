@@ -9,7 +9,6 @@ function getCatalog(){
 }
 
 const Catalog = (props) => {
-
 		let items = props.items.map ( item => {
 			return <CatalogItem key={ item.id } item={ item } />
 		});
@@ -18,6 +17,5 @@ const Catalog = (props) => {
 				{ items }
 			</div>
 		)
-
 }
 export default StoreWatchMixin(Catalog, getCatalog);
