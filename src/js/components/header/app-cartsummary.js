@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const CartSummary = (props) => {
 	return (
 		<div style={{paddingTop: 15}}>
-			<Link to="/cart" className="btn btn-success">
+			<Link to={{pathname: '/cart'}} className="btn btn-success">
 				{ `Cart Items: ${props.qty} / $${props.total}` }
 			</Link>
 		</div>
