@@ -1,5 +1,9 @@
 Working through [Egghead's Flux tutorial](https://github.com/joemaddalone/egghead-flux-architecture/blob/05-components/package.json)
 
+## Changes to original tutorial
+- Updating tutorial to react-router 4.
+- Used create-react-app. Webpack is not exposed.
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
