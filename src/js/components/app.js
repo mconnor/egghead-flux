@@ -11,12 +11,13 @@ import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 // );
 const App = () => (
   <Router>
-		<div>
-    <Route component={Template} />
-      <Route exact path="/" component={Catalog} />
-      <Route path="/cart" component={Cart} />
-      <Route path="/item/:item" component={CatalogDetail} />
-</div>
+    <div>
+      <Template>
+        <Route exact path="/" component={Catalog}/>
+        <Route path="/cart" component={Cart}/>
+        <Route path="/item/:item" component={CatalogDetail}/>
+      </Template>
+    </div>
 
   </Router>
 );
