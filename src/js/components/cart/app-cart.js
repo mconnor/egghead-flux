@@ -1,7 +1,9 @@
 import React from 'react';
 import AppStore from '../../stores/app-store';
 import AppCartItem from './app-cart-item';
+
 import StoreWatchMixin from '../../mixins/StoreWatchMixin';
+import { Link } from 'react-router-dom';
 
 const cartItems = () => {
 	return { items: AppStore.getCart() }
@@ -38,8 +40,11 @@ const Cart = (props) => {
 						<td colSpan="4" className="text-right">Total</td>
 						<td>${total}</td>
 					</tr>
+
+
 				</tfoot>
 			</table>
+			<Link to="/">continue shopping</Link>
 		</div>
 	);
 }
