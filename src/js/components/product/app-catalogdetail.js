@@ -7,9 +7,8 @@ import { Link } from 'react-router-dom';
 
 
 function getCatalogItem( props ){
-	console.log(props);
-  let item = AppStore.getCatalog().find( ({ id }) => id === props.params.item )
-  return {item}
+  let item = AppStore.getCatalog().find( ({ id }) => id === props.match.params.item );
+  return {item};
 }
 
 const CatalogDetails = (props) => {
